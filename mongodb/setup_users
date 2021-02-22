@@ -1,0 +1,18 @@
+db.createUser({
+  user : 'root',
+  pwd : '${root_pass}',
+  roles : [
+    'clusterAdmin',
+    'dbAdminAnyDatabase',
+    'userAdminAnyDatabase',
+    'readWriteAnyDatabase'
+  ]
+})
+
+db.createUser(
+  {user:'${user_name}',
+   pwd:'${user_pass}', 
+   roles:[
+     {role:'readWrite', db:'${database_name}'}
+  ]
+})
